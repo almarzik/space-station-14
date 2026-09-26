@@ -1,0 +1,52 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BasePassengerAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredJob
+      jobs:
+      - Passenger
+
+- type: entity
+  parent: SS220BasePassengerAmbition
+  id: SS220AmbitionHomeDream
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-location-love-name
+    desc: ss220-ambition-location-love-desc
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation
+
+- type: entity
+  parent: SS220BasePassengerAmbition
+  id: SS220AmbitionJobGift
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-job-gift-name
+    desc: ss220-ambition-job-gift-desc
+    weight: 3
+    parsings:
+      JOB: !type:SS220AmbitionRandomOtherJob
+      ITEM: !type:SS220AmbitionRandomEntity
+        whitelist:
+        - Item
+
+- type: entity
+  parent: SS220BasePassengerAmbition
+  id: SS220AmbitionDramaMaster
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-drama-master-name
+    desc: ss220-ambition-drama-master-desc
+- type: entity
+  parent: SS220BasePassengerAmbition
+  id: SS220AmbitionFashionista
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-fashionista-name
+    desc: ss220-ambition-fashionista-desc

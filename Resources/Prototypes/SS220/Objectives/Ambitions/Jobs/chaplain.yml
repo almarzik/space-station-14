@@ -1,0 +1,60 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseChaplainAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredJob
+      jobs:
+      - Chaplain
+
+- type: entity
+  parent: SS220BaseChaplainAmbition
+  id: SS220AmbitionFirearms
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-firearms-name
+    desc: ss220-ambition-firearms-desc
+
+- type: entity
+  parent: SS220BaseChaplainAmbition
+  id: SS220AmbitionLaser
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-laser-name
+    desc: ss220-ambition-laser-desc
+
+- type: entity
+  parent: SS220BaseChaplainAmbition
+  id: SS220AmbitionKnife
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-knife-name
+    desc: ss220-ambition-knife-desc
+
+- type: entity
+  parent: SS220BaseChaplainAmbition
+  id: SS220AmbitionCat
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-cat-name
+    desc: ss220-ambition-cat-desc
+
+- type: entity
+  parent: SS220BaseChaplainAmbition
+  id: SS220AmbitionDog
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-dog-name
+    desc: ss220-ambition-dog-desc
+
+- type: entity
+  parent: SS220BaseChaplainAmbition
+  id: SS220AmbitionSatan
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-satan-name
+    desc: ss220-ambition-satan-desc

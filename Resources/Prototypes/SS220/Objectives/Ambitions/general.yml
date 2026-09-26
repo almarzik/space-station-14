@@ -1,0 +1,551 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionAlcoholic
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-alcoholic-name
+    desc: ss220-ambition-alcoholic-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionFoodCritic
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-food-critic-name
+    desc: ss220-ambition-food-critic-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionWordOfHonor
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-word-of-honor-name
+    desc: ss220-ambition-word-of-honor-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionLiar
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-liar-name
+    desc: ss220-ambition-liar-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionStrongDiet
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-strong-diet-name
+    desc: ss220-ambition-strong-diet-desc
+    weight: 2
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+      FOOD: !type:SS220AmbitionRandomFood
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionItemMania
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-mania-name
+    desc: ss220-ambition-item-mania-desc
+    weight: 3
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+      ITEM: !type:SS220AmbitionRandomEntity
+        whitelist:
+        - Item
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionAbstractMania
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-mania-name
+    desc: ss220-ambition-abstract-mania-desc
+    parsings:
+      TOPIC: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionAbstractTopic
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSpeciesMania
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-mania-name
+    desc: ss220-ambition-species-mania-desc
+    weight: 2
+    parsings:
+      SPECIES: !type:SS220AmbitionRandomSpecies
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionEarning
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-become-rich-name
+    desc: ss220-ambition-become-rich-desc
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 500
+          max: 1000
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionBefriend
+  components:
+  - type: SS220AmbitionObjective
+    weight: 3 #Socialization is fun
+    name: ss220-ambition-befriend-name
+    desc: ss220-ambition-befriend-desc
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionEnemy
+  components:
+  - type: SS220AmbitionObjective
+    weight: 3 #Socialization is fun
+    name: ss220-ambition-enemy-name
+    desc: ss220-ambition-enemy-desc
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionDate
+  components:
+  - type: SS220AmbitionObjective
+    weight: 3 #Socialization is fun
+    name: ss220-ambition-date-name
+    desc: ss220-ambition-date-desc
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+      FOOD: !type:SS220AmbitionRandomFood
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionProfessionChange
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-profession-change-name
+    desc: ss220-ambition-profession-change-desc
+    parsings:
+      JOB: !type:SS220AmbitionRandomOtherJob
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionManipulatorQuarrel
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-manipulator-name
+    desc: ss220-ambition-manipulator-quarrel-desc
+    parsings:
+      NAME1: !type:SS220AmbitionRandomOtherPerson
+      NAME2: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionManipulatorFriend
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-manipulator-name
+    desc: ss220-ambition-manipulator-friend-desc
+    parsings:
+      NAME1: !type:SS220AmbitionRandomOtherPerson
+      NAME2: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSupport
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-support-name
+    desc: ss220-ambition-support-desc
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionStoryCollector
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-story-collector-name
+    desc: ss220-ambition-story-collector-desc
+    weight: 3 # Social interaction
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 3
+          max: 6
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSecretBenefactor
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-secret-benefactor-name
+    desc: ss220-ambition-secret-benefactor-desc
+    weight: 3 # Social interaction
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionUnusualCollector
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-unusual-collector-name
+    desc: ss220-ambition-unusual-collector-desc
+    weight: 2
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 5
+      ITEM: !type:SS220AmbitionRandomEntity
+        whitelist:
+        - Item
+        blacklist:
+        - Extractable # uhh, not the best way, but i wanna exclude organs
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionInteriorDesigner
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-interior-designer-name
+    desc: ss220-ambition-interior-designer-desc
+    weight: 2
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionPeacemaker
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-peacemaker-name
+    desc: ss220-ambition-peacemaker-desc
+    weight: 2 # Roleplay challenge
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionParanoidal
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-paranoidal-name
+    desc: ss220-ambition-paranoidal-desc
+    weight: 2 # Fun
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionInnocentSoul
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-innocent-soul-name
+    desc: ss220-ambition-innocent-soul-desc
+    weight: 2 # Fun
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSkateboard
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredSpecies # Already suited to this species
+      inverted: true
+      species:
+      - Vox
+    - !type:SS220AmbitionRequiredJob # Security has its own equipment
+      inverted: true
+      jobs:
+      - SecurityOfficer
+    name: ss220-ambition-hoverboard-name
+    desc: ss220-ambition-hoverboard-desc
+    weight: 1
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSkateboardRace
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-hoverboard-race-name
+    desc: ss220-ambition-hoverboard-race-desc
+    weight: 1
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionGluttony
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-gluttony-name
+    desc: ss220-ambition-gluttony-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionFakedDeath
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-faked-death-name
+    desc: ss220-ambition-faked-death-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionExtremist
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-extremist-name
+    desc: ss220-ambition-extremist-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionScienceCuriosity
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-science-curiosity-name
+    desc: ss220-ambition-science-curiosity-desc
+    parsings:
+      DISCOVERY: !type:SS220AmbitionRandomScienceDiscovery
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionForbiddenKnowledge
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-forbidden-knowledge-name
+    desc: ss220-ambition-forbidden-knowledge-desc
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+      DISCOVERY: !type:SS220AmbitionRandomScienceDiscovery
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionEnlightener
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-enlightener-name
+    desc: ss220-ambition-enlightener-desc
+    parsings:
+      DISCOVERY: !type:SS220AmbitionRandomScienceDiscovery
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionDebtBecomeRich
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-debt-become-rich-name
+    desc: ss220-ambition-debt-become-rich-desc
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSmoker
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-smoker-name
+    desc: ss220-ambition-smoker-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionDrinkCritic
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-drink-critic-name
+    desc: ss220-ambition-drink-critic-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionTobaccoCritic
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-tobacco-critic-name
+    desc: ss220-ambition-tobacco-critic-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionMeatCritic
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-meat-critic-name
+    desc: ss220-ambition-meat-critic-desc
+    parsings:
+      SPECIES: !type:SS220AmbitionRandomSpecies
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionEnemyRevenge
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-enemy-revenge-name
+    desc: ss220-ambition-enemy-revenge-desc
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionEnemyOlders
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-enemy-olders-name
+    desc: ss220-ambition-enemy-olders-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionDateLovelas
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-date-lovelas-name
+    desc: ss220-ambition-date-lovelas-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionParanoidalPlants
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-paranoidal-plants-name
+    desc: ss220-ambition-paranoidal-plants-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionMagnifierArt
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-magnifier-art-name
+    desc: ss220-ambition-magnifier-art-desc
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSelfConfidence
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-self-confidence-name
+    desc: ss220-ambition-self-confidence-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionHeroInDark
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-hero-in-dark-name
+    desc: ss220-ambition-hero-in-dark-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSelfIdentification
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-self-identification-name
+    desc: ss220-ambition-self-identification-desc
+    parsings:
+      SPECIES: !type:SS220AmbitionRandomSpecies
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSelfIdentificationMachine
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-self-identification-machine-name
+    desc: ss220-ambition-self-identification-machine-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionCareerist
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-careerist-name
+    desc: ss220-ambition-careerist-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionImplant
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-implant-name
+    desc: ss220-ambition-implant-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionBarefoot
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-barefoot-name
+    desc: ss220-ambition-barefoot-desc
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSocrates
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-socrates-name
+    desc: ss220-ambition-socrates-desc
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionBodyBuilding
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-body-building-name
+    desc: ss220-ambition-body-building-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionBlood
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-blood-name
+    desc: ss220-ambition-blood-desc
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionBowman
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-bowman-name
+    desc: ss220-ambition-bowman-desc
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionSpearman
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-spearman-name
+    desc: ss220-ambition-spearman-desc
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220AmbitionBigBoss
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-big-boss-name
+    desc: ss220-ambition-big-boss-desc
+    weight: 1.5

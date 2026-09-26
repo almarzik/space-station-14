@@ -1,0 +1,59 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  abstract: true
+  id: SS220BaseFelineAmbition
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredSpecies
+      species:
+      - Tajaran
+      - Felinid
+
+- type: entity
+  parent: SS220BaseFelineAmbition
+  id: SS220AmbitionTerritorialMarks
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredSpecies
+      species:
+      - Tajaran
+      - Felinid
+      - Vox
+    name: ss220-ambition-territorial-marks-name
+    desc: ss220-ambition-territorial-marks-desc
+    weight: 2
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation
+
+- type: entity
+  parent: SS220BaseFelineAmbition
+  id: SS220AmbitionNineLives
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-nine-lives-name
+    desc: ss220-ambition-nine-lives-desc
+    weight: 1.5
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 4
+
+- type: entity
+  parent: SS220BaseFelineAmbition
+  id: SS220AmbitionCatCouncil
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-cat-council-name
+    desc: ss220-ambition-cat-council-desc
+    weight: 2
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 4

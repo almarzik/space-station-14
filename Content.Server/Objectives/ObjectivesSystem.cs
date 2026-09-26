@@ -18,6 +18,8 @@ using Content.Shared.Roles.Jobs;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
+using Content.Shared.Roles; // SS220-ambitions
+using Content.Shared.SS220.Ambitions.Components; // SS220-ambitions
 
 namespace Content.Server.Objectives;
 
@@ -113,6 +115,10 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             if (processedMinds.Contains(mindId) || mindComp.Objectives.Count == 0)
                 continue;
 
+            // SS220-ambitions: hidden ambitions must not create a civilian summary entry.
+            if (GetRoundEndObjectives(mindId, mindComp).Count == 0)
+                continue;
+
             var agent = Loc.GetString("free-objective-round-end-agent-name");
             var name = mindComp.CharacterName ?? Loc.GetString("objective-issuer-unknown");
 
@@ -174,7 +180,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             var title = GetTitle((mindId, mind), name);
             var custody = IsInCustody(mindId, mind) ? Loc.GetString("objectives-in-custody") : string.Empty;
 
-            var objectives = mind.Objectives;
+            var objectives = GetRoundEndObjectives(mindId, mind); // SS220-ambitions
             if (objectives.Count == 0)
             {
                 agentSummaries.Add((Loc.GetString("objectives-no-objectives", ("custody", custody), ("title", title), ("agent", agent)), 0f, 0));
@@ -200,6 +206,15 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                         continue;
 
                     var objectiveTitle = info.Value.Title;
+                    // SS220-ambitions-begin: roleplay goals have no completion score.
+                    if (HasComp<SS220AmbitionObjectiveComponent>(objective))
+                    {
+                        agentSummary.Append("- ");
+                        agentSummary.AppendLine(objectiveTitle);
+                        continue;
+                    }
+                    // SS220-ambitions-end
+
                     var progress = info.Value.Progress;
                     totalObjectives++;
 
@@ -256,6 +271,23 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             result.AppendLine(summary);
         }
     }
+
+    // SS220-ambitions-begin
+    private List<EntityUid> GetRoundEndObjectives(EntityUid mindId, MindComponent mind)
+    {
+        if (EntityManager.System<SharedRoleSystem>().MindIsAntagonist(mindId))
+            return mind.Objectives;
+
+        var objectives = new List<EntityUid>();
+        foreach (var objective in mind.Objectives)
+        {
+            if (!HasComp<SS220AmbitionObjectiveComponent>(objective))
+                objectives.Add(objective);
+        }
+
+        return objectives;
+    }
+    // SS220-ambitions-end
 
     public EntityUid? GetRandomObjective(EntityUid mindId, MindComponent mind, ProtoId<WeightedRandomPrototype> objectiveGroupProto, float maxDifficulty)
     {

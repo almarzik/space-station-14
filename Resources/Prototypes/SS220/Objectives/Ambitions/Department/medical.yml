@@ -1,0 +1,28 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseMedicalDepartmentAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredDepartment
+      departments:
+      - Medical
+
+- type: entity
+  parent: SS220BaseMedicalDepartmentAmbition
+  id: SS220AmbitionSterility
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-sterility-name
+    desc: ss220-ambition-sterility-desc
+
+- type: entity
+  parent: SS220BaseMedicalDepartmentAmbition
+  id: SS220AmbitionPainkiller
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-painkiller-name
+    desc: ss220-ambition-painkiller-desc

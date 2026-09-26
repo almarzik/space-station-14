@@ -1,0 +1,72 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  abstract: true
+  id: SS220BaseMothAmbition
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredSpecies
+      species:
+      - Moth
+
+- type: entity
+  parent: SS220BaseMothAmbition
+  id: SS220AmbitionNatureHarmony
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-nature-harmony-name
+    desc: ss220-ambition-nature-harmony-desc
+    weight: 2
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 5
+
+- type: entity
+  parent: SS220BaseMothAmbition
+  id: SS220AmbitionElvenArt
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-elven-art-name
+    desc: ss220-ambition-elven-art-desc
+    weight: 2
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation
+
+- type: entity
+  parent: SS220BaseMothAmbition
+  id: SS220AmbitionDisdainForHaste
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-disdain-for-haste-name
+    desc: ss220-ambition-disdain-for-haste-desc
+    weight: 1.5
+
+- type: entity
+  parent: SS220BaseMothAmbition
+  id: SS220AmbitionRacialSuperiority
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-racial-superiority-name
+    desc: ss220-ambition-racial-superiority-desc
+    weight: 1.5
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 4
+
+- type: entity
+  parent: SS220BaseMothAmbition
+  id: SS220AmbitionMoonSong
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-moon-song-name
+    desc: ss220-ambition-moon-song-desc
+    weight: 2
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson

@@ -1,0 +1,44 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseCommandDepartmentAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredDepartment
+      departments:
+      - Command
+
+- type: entity
+  parent: SS220BaseCommandDepartmentAmbition
+  id: SS220AmbitionCompromisingEvidence
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-compromising-evidence-name
+    desc: ss220-ambition-compromising-evidence-desc
+
+- type: entity
+  parent: SS220BaseCommandDepartmentAmbition
+  id: SS220AmbitionFamily
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-family-name
+    desc: ss220-ambition-family-desc
+
+- type: entity
+  parent: SS220BaseCommandDepartmentAmbition
+  id: SS220AmbitionHarshCommander
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-harsh-commander-name
+    desc: ss220-ambition-harsh-commander-desc
+
+- type: entity
+  parent: SS220BaseCommandDepartmentAmbition
+  id: SS220AmbitionKindCommander
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-kind-commander-name
+    desc: ss220-ambition-kind-commander-desc

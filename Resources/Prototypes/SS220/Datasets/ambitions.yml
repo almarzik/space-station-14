@@ -1,0 +1,14 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: localizedDataset
+  id: SS220AmbitionReason
+  values:
+    prefix: ss220-ambition-reason-
+    count: 20
+
+- type: localizedDataset
+  id: SS220AmbitionAbstractTopic
+  values:
+    prefix: ss220-ambition-abstract-theme-
+    count: 12

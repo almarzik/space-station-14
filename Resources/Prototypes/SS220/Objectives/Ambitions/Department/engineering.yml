@@ -1,0 +1,22 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseEngineeringDepartmentAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredDepartment
+      departments:
+      - Engineering
+
+- type: entity
+  parent: SS220BaseEngineeringDepartmentAmbition
+  id: SS220AmbitionRenovation
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-renovation-name
+    desc: ss220-ambition-renovation-desc
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation

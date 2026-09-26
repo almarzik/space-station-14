@@ -1,0 +1,44 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  abstract: true
+  id: SS220BaseDionaAmbition
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredSpecies
+      species:
+      - Diona
+
+- type: entity
+  parent: SS220BaseDionaAmbition
+  id: SS220AmbitionRootsMemory
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-roots-memory-name
+    desc: ss220-ambition-roots-memory-desc
+    weight: 2
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation
+
+- type: entity
+  parent: SS220BaseDionaAmbition
+  id: SS220AmbitionWaterOfLife
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-water-of-life-name
+    desc: ss220-ambition-water-of-life-desc
+    weight: 2
+
+- type: entity
+  parent: SS220BaseDionaAmbition
+  id: SS220AmbitionForestCathedral
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-forest-cathedral-name
+    desc: ss220-ambition-forest-cathedral-desc
+    weight: 2
+    parsings:
+      LOCATION: !type:SS220AmbitionRandomLocation

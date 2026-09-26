@@ -1,0 +1,63 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseTraitorAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredTraitorRole
+
+- type: entity
+  parent: SS220BaseTraitorAmbition
+  id: SS220AmbitionAgentFanBoom
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-agent-fan-boom-name
+    desc: ss220-ambition-agent-fan-boom-desc
+
+- type: entity
+  parent: SS220BaseTraitorAmbition
+  id: SS220AmbitionAgentRedemption
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-agent-redemption-name
+    desc: ss220-ambition-agent-redemption-desc
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 5
+
+- type: entity
+  parent: SS220BaseTraitorAmbition
+  id: SS220AmbitionAgentFear
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-agent-fear-name
+    desc: ss220-ambition-agent-fear-desc
+
+- type: entity
+  parent: SS220BaseTraitorAmbition
+  id: SS220AmbitionAgentUplink
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-agent-uplink-name
+    desc: ss220-ambition-agent-uplink-desc
+
+- type: entity
+  parent: SS220BaseTraitorAmbition
+  id: SS220AmbitionAgentDuel
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-agent-duel-name
+    desc: ss220-ambition-agent-duel-desc
+
+- type: entity
+  parent: SS220BaseTraitorAmbition
+  id: SS220AmbitionAgentArtist
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-agent-artist-name
+    desc: ss220-ambition-agent-artist-desc

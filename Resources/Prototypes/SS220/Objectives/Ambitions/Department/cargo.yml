@@ -1,0 +1,38 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseCargoDepartmentAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredDepartment
+      departments:
+      - Cargo
+
+- type: entity
+  parent: SS220BaseCargoDepartmentAmbition
+  id: SS220AmbitionMasterTrade
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-master-trade-name
+    desc: ss220-ambition-master-trade-desc
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseCargoDepartmentAmbition
+  id: SS220AmbitionUndergroundClub
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-underground-club-name
+    desc: ss220-ambition-underground-club-desc
+
+- type: entity
+  parent: SS220BaseCargoDepartmentAmbition
+  id: SS220AmbitionAuctionClub
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-auction-club-name
+    desc: ss220-ambition-auction-club-desc

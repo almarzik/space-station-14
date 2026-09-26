@@ -1,0 +1,30 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BasePsychologistAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredJob
+      jobs:
+      - Psychologist
+
+- type: entity
+  parent: SS220BasePsychologistAmbition
+  id: SS220AmbitionToy
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-toy-name
+    desc: ss220-ambition-toy-desc
+
+- type: entity
+  parent: SS220BasePsychologistAmbition
+  id: SS220AmbitionPsychotrauma
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-psychotrauma-name
+    desc: ss220-ambition-psychotrauma-desc
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson

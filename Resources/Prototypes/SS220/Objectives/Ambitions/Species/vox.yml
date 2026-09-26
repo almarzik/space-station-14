@@ -1,0 +1,21 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  abstract: true
+  id: SS220BaseVoxAmbition
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredSpecies
+      species:
+      - Vox
+
+- type: entity
+  parent: SS220BaseVoxAmbition
+  id: SS220AmbitionNesting
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-nesting-name
+    desc: ss220-ambition-nesting-desc

@@ -1,0 +1,20 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseBrigmedicAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredJob
+      jobs:
+      - Brigmedic
+
+- type: entity
+  parent: SS220BaseBrigmedicAmbition
+  id: SS220AmbitionBrigPsychologist
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-brig-psychologist-name
+    desc: ss220-ambition-brig-psychologist-desc

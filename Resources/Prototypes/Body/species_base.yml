@@ -31,6 +31,9 @@
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
+  # SS220-ambitions-begin
+  - type: SS220AmbitionsSetup
+  # SS220-ambitions-end
   - type: HumanoidProfile
   - type: TypingIndicator
   - type: SlowOnDamage
@@ -132,6 +135,11 @@
   - type: Stripping
   - type: UserInterface
     interfaces:
+      # SS220-ambitions-begin
+      enum.SS220AmbitionsUIKey.Key:
+        type: SS220AmbitionsBoundUserInterface
+        requireInputValidation: false
+      # SS220-ambitions-end
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:

@@ -1,0 +1,20 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseBotanistAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredJob
+      jobs:
+      - Botanist
+
+- type: entity
+  parent: SS220BaseBotanistAmbition
+  id: SS220AmbitionHerbalist
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-herbalist-name
+    desc: ss220-ambition-herbalist-desc

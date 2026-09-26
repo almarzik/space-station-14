@@ -1,0 +1,36 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  abstract: true
+  id: SS220BaseDwarfAmbition
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredSpecies
+      species:
+      - Dwarf
+
+- type: entity
+  parent: SS220BaseDwarfAmbition
+  id: SS220AmbitionUndergroundLonging
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-underground-longing-name
+    desc: ss220-ambition-underground-longing-desc
+    weight: 2
+
+- type: entity
+  parent: SS220BaseDwarfAmbition
+  id: SS220AmbitionAncestorDebt
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-ancestor-debt-name
+    desc: ss220-ambition-ancestor-debt-desc
+    weight: 2
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 5

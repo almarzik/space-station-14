@@ -1,0 +1,84 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseCaptainAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredJob
+      jobs:
+      - Captain
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionGamemaster
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-gamemaster-name
+    desc: ss220-ambition-gamemaster-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestival
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-name
+    desc: ss220-ambition-festival-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestivalBeer
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-beer-name
+    desc: ss220-ambition-festival-beer-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestivalSecurity
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-security-name
+    desc: ss220-ambition-festival-security-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestivalEngineering
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-engineering-name
+    desc: ss220-ambition-festival-engineering-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestivalScience
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-science-name
+    desc: ss220-ambition-festival-science-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestivalMedicine
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-medicine-name
+    desc: ss220-ambition-festival-medicine-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestivalCargo
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-cargo-name
+    desc: ss220-ambition-festival-cargo-desc
+
+- type: entity
+  parent: SS220BaseCaptainAmbition
+  id: SS220AmbitionFestivalService
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-festival-service-name
+    desc: ss220-ambition-festival-service-desc

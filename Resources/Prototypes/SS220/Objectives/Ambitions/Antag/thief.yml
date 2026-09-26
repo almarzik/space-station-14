@@ -1,0 +1,80 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+# Ported from CrystallEdge, TheShuEd and contributors, revision 728cd277da. Original authorship retained; SS220 notice covers adaptations.
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseThiefAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredThiefRole
+    weight: 3 #Antag ambitions are fun!!
+
+- type: entity
+  parent: SS220BaseThiefAmbition
+  id: SS220AmbitionThiefVengeance
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-thief-vengeance-name
+    desc: ss220-ambition-thief-vengeance-desc
+    parsings:
+      NAME: !type:SS220AmbitionRandomOtherPerson
+
+- type: entity
+  parent: SS220BaseThiefAmbition
+  id: SS220AmbitionThiefFelineMischief
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredThiefRole
+    - !type:SS220AmbitionRequiredSpecies
+      species:
+      - Tajaran
+      - Felinid
+    name: ss220-ambition-thief-carcat-mischief-name
+    desc: ss220-ambition-thief-carcat-mischief-desc
+
+- type: entity
+  parent: SS220BaseThiefAmbition
+  id: SS220AmbitionThiefLair
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-thief-lair-name
+    desc: ss220-ambition-thief-lair-desc
+    weight: 2
+    parsings:
+      REASON: !type:SS220AmbitionRandomDataset
+        dataset: SS220AmbitionReason
+      LOCATION: !type:SS220AmbitionRandomLocation
+
+- type: entity
+  parent: SS220BaseThiefAmbition
+  id: SS220AmbitionThiefVoxMagpie
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredThiefRole
+    name: ss220-ambition-thief-carrin-magpie-name
+    desc: ss220-ambition-thief-carrin-magpie-desc
+
+- type: entity
+  parent: SS220BaseThiefAmbition
+  id: SS220AmbitionThiefBlindJustice
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-thief-blind-justice-name
+    desc: ss220-ambition-thief-blind-justice-desc
+
+- type: entity
+  parent: SS220BaseThiefAmbition
+  id: SS220AmbitionThiefRedemption
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-thief-redemption-name
+    desc: ss220-ambition-thief-redemption-desc
+    parsings:
+      COUNT: !type:SS220AmbitionRandomNumber
+        range:
+          min: 2
+          max: 5

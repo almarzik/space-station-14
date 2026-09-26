@@ -1,0 +1,20 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+
+- type: entity
+  parent: SS220BaseAmbitionObjective
+  id: SS220BaseScienceDepartmentAmbition
+  abstract: true
+  components:
+  - type: SS220AmbitionObjective
+    conditions:
+    - !type:SS220AmbitionRequiredDepartment
+      departments:
+      - Science
+
+- type: entity
+  parent: SS220BaseScienceDepartmentAmbition
+  id: SS220AmbitionHonkbot
+  components:
+  - type: SS220AmbitionObjective
+    name: ss220-ambition-honkbot-name
+    desc: ss220-ambition-honkbot-desc
